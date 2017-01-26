@@ -24,13 +24,13 @@ public class Member extends Person implements Serializable{
 
 	List<CheckOutRecord> checkOutRecord;
 
-	public Member(int id, PersonData personData, int memberid) {
-		super(id, personData);
+	public Member(String firstName, String lastName, int phoneNumber, Address address, int memberid) {
+		super( firstName,  lastName,  phoneNumber,  address);
 		this.memberid = memberid;
 	}
 
-	public Member(int id, PersonData personData, int memberid, List<CheckOutRecord> checkOutRecord) {
-		super(id, personData);
+	public Member(String firstName, String lastName, int phoneNumber, Address address, int memberid, List<CheckOutRecord> checkOutRecord) {
+		super( firstName,  lastName,  phoneNumber,  address);
 		this.memberid = memberid;
 		this.checkOutRecord = checkOutRecord;
 	}

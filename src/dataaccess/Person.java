@@ -3,14 +3,14 @@ package dataaccess;
 
 import java.io.*;
 
-public class PersonData implements Serializable {
+public class Person implements Serializable {
 	private String firstName;
 	private String lastName;
 	private int phoneNumber;
 	private Address address;
 
 
-	public PersonData(String firstName, String lastName, int phoneNumber, Address address) {
+	public Person(String firstName, String lastName, int phoneNumber, Address address) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -69,7 +69,7 @@ public class PersonData implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		PersonData other = (PersonData) obj;
+		Person other = (Person) obj;
 		if (address == null) {
 			if (other.address != null)
 				return false;

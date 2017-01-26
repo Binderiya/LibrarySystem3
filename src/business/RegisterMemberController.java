@@ -73,7 +73,7 @@ public class RegisterMemberController implements Initializable {
 			FileOutputStream fileOutputStream = new FileOutputStream(OUTPUT_DIR);
 
 			Address address = new Address(txtStreet.getText(), txtCity.getText(), txtState.getText(), Integer.parseInt(txtZip.getText()));
-			PersonData per = new PersonData(txtFName.getText(), txtLName.getText(),	Integer.parseInt(txtPhone.getText()), address);
+			Person per = new Person(txtFName.getText(), txtLName.getText(),	Integer.parseInt(txtPhone.getText()), address);
 			ObjectOutputStream output = new ObjectOutputStream(fileOutputStream);
 			output.writeObject(per);
 
@@ -90,7 +90,7 @@ public class RegisterMemberController implements Initializable {
 			// Read from the stored file
 			FileInputStream fileInputStream = new FileInputStream(new File(OUTPUT_DIR));
 			ObjectInputStream input = new ObjectInputStream(fileInputStream);
-			PersonData personDataR = (PersonData) input.readObject();
+			Person personDataR = (Person) input.readObject();
 			System.out.println(personDataR.getFirstName() + "  " + personDataR.getLastName() + "  "
 					+ personDataR.getPhoneNumber() + "  " + personDataR.getAddress() + "  ");
 			input.close();

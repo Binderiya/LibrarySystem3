@@ -2,10 +2,10 @@ package dataaccess;
 
 import java.io.Serializable;
 
-public class StaffRole implements Serializable {
+public class PersonRole implements Serializable {
   private String roleName;
 
-  public StaffRole(String rolename){
+  public PersonRole(String rolename){
 	  this.roleName= rolename;
 
   }
@@ -32,7 +32,7 @@ public boolean equals(Object obj) {
 		return false;
 	if (getClass() != obj.getClass())
 		return false;
-	StaffRole other = (StaffRole) obj;
+	PersonRole other = (PersonRole) obj;
 	if (roleName == null) {
 		if (other.roleName != null)
 			return false;

@@ -8,8 +8,7 @@ import java.io.ObjectInputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import dataaccess.PersonData;
-import dataaccess.StaffMember;
+import dataaccess.Person;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -23,9 +22,10 @@ import javafx.stage.Stage;
 
 public class LoginController implements Initializable {
 	public static final String OUTPUT_DIR = System.getProperty("user.dir")
-			+ "\\src\\Docs\\personData";
+			+ "\\src\\Docs\\PersonData";
 	@FXML GridPane mainLayout;
 	@FXML TextField txtUserName;
+	@FXML TextField txtPassword;
 	@FXML Button loginBtn;
 	@FXML Button registerBtn;
 	@FXML Label lbl1;
@@ -39,17 +39,24 @@ public class LoginController implements Initializable {
 	}
 	@FXML private void clickedLogin(ActionEvent event){
 
-		if (txtUserName.getText().equals("Admin")){
+		if (txtUserName.getText().equals("Admin") &&(txtPassword.getText().equals("123bz")) ){
 		String adminView = "../ui/AdminView.fxml";
 		String viewTitle = "Library System_Admin";
 		helper.loadNewStage(stage, lbl1, adminView, viewTitle, false);
 		}
 		else
+			if (txtUserName.getText().equals("Librarian") &&(txtPassword.getText().equals("123zaid")) )
 		{
 			String librarianView = "../ui/LibrarianView.fxml";
 			String viewTitle = "Welcome Librarian";
 			helper.loadNewStage(stage, lbl1, librarianView, viewTitle, false);
 		}
+			else{
+				String loginview = "../ui/LoginView.fxml";
+				String viewTitle = "Library System_Login";
+				helper.loadNewStage(stage, lbl1, loginview, viewTitle, false);
+
+			}
 
 	}
 

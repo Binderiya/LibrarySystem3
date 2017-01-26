@@ -9,7 +9,7 @@ public class Book implements Serializable {
 	private int isbn;
 	private boolean available;
 	private List<Author> author;
-	private CopyOfBook copyOfBook;
+	private List<CopyOfBook> copyOfBook;
 
 	public int getDay() {
 		return day;
@@ -51,15 +51,15 @@ public class Book implements Serializable {
 		this.author = author;
 	}
 
-	public CopyOfBook getCopyOfBook() {
+	public List<CopyOfBook> getCopyOfBook() {
 		return copyOfBook;
 	}
 
-	public void setCopyOfBook(CopyOfBook copyOfBook) {
+	public void setCopyOfBook(List<CopyOfBook> copyOfBook) {
 		this.copyOfBook = copyOfBook;
 	}
 
-	public Book(int day, String title, int isbn, boolean available, List<Author> author, CopyOfBook copyOfBook) {
+	public Book(int day, String title, int isbn, boolean available, List<Author> author, List<CopyOfBook> copyOfBook) {
 		super();
 		this.day = day;
 		this.title = title;
