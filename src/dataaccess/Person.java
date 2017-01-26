@@ -1,39 +1,65 @@
+
 package dataaccess;
 
-import java.io.Serializable;
+import java.io.*;
 
-class Person implements Serializable{
+public class PersonData implements Serializable {
+	private String firstName;
+	private String lastName;
+	private int phoneNumber;
+	private Address address;
 
-	private int id;
-	private PersonData personData;
 
-	public Person(int id) {
+	public PersonData(String firstName, String lastName, int phoneNumber, Address address) {
 		super();
-		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.phoneNumber = phoneNumber;
+		this.address = address;
+
 	}
 
-	public Person(int id, PersonData personData) {
-		super();
-		this.id = id;
-		this.personData = personData;
+
+
+
+	public Address getAddress() {
+
+		return address;
 	}
 
-	public int getId() {
-		return id;
+	public void setAddress(Address a) {
+		this.address = a;
+
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public PersonData getPersonData() {
-		return personData;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
-	@Override
-	public String toString() {
-		return "Person [id=" + id + ", personData=" + personData + "]";
+	public String getLastName() {
+		return lastName;
 	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public int getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(int phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+
+
+
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -43,15 +69,32 @@ class Person implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Person other = (Person) obj;
-		if (id != other.id)
+		PersonData other = (PersonData) obj;
+		if (address == null) {
+			if (other.address != null)
+				return false;
+		} else if (!address.equals(other.address))
+			return false;
+		if (firstName == null) {
+			if (other.firstName != null)
+				return false;
+		} else if (!firstName.equals(other.firstName))
+			return false;
+		if (lastName == null) {
+			if (other.lastName != null)
+				return false;
+		} else if (!lastName.equals(other.lastName))
+			return false;
+		if (phoneNumber != other.phoneNumber)
 			return false;
 		return true;
 	}
 
-	public void setPersonData(PersonData personData) {
-		this.personData = personData;
+
+
+
+	@Override
+	public String toString() {
+		return getFirstName() + " " + getLastName() + " " + getPhoneNumber();
 	}
-
-
 }
