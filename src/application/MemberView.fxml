@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="memberLbl">
+         <graphic>
+            <TableView  prefHeight="176.0" prefWidth="321.0">
+              <columns>
+                  <TableColumn prefWidth="75.0" text="BookTitle" />
+                  <TableColumn prefWidth="91.0" text="CheckOutDate" />
+                  <TableColumn prefWidth="71.0" text="DueDate" />
+                  <TableColumn prefWidth="82.0" text="ReturnDate" />
+              </columns>
+            </TableView>
+         </graphic>
+      </Label>
+   </children>
+</AnchorPane>

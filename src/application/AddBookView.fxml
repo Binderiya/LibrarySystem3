@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddBookController">
+   <children>
+      <Label fx:id="addBookLbl" textFill="#1c0505">
+         <graphic>
+            <GridPane prefHeight="495.0" prefWidth="450.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="190.0" minWidth="10.0" prefWidth="144.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="184.0" minWidth="10.0" prefWidth="166.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints maxHeight="31.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="42.0" minHeight="20.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="41.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="37.0" minHeight="5.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="48.0" minHeight="6.0" prefHeight="22.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="49.0" minHeight="0.0" prefHeight="24.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="47.0" minHeight="0.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="24.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="49.0" minHeight="10.0" prefHeight="23.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="52.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="52.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="57.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="46.0" minHeight="0.0" prefHeight="43.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ISBN: " GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Title:" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Authors:" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Maximum checkout length:" GridPane.halignment="CENTER" GridPane.rowIndex="12" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Number of copies:" GridPane.halignment="CENTER" GridPane.rowIndex="13" />
+                  <TextField fx:id="isbn" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="title" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="authorFirstName" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="maxCheckoutLength" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                  <TextField fx:id="numberOfCopies" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                  <Button fx:id="addBtn" mnemonicParsing="false" text="Add" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="14" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Firstname:" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lastname:" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Phonenumber:" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Address: " GridPane.halignment="CENTER" GridPane.rowIndex="7" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Street:" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="City:" GridPane.halignment="CENTER" GridPane.rowIndex="9" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="State: " GridPane.halignment="CENTER" GridPane.rowIndex="10" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Zip code: " GridPane.halignment="CENTER" GridPane.rowIndex="11" />
+                  <TextField fx:id="AuthorPhoneNumber" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <TextField fx:id="AuthorLastName" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <TextField fx:id="AuthorStreet" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <TextField fx:id="AuthorCity" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <TextField fx:id="AuthorState" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                  <TextField fx:id="AuthorZip" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                  <Text fill="#0b4287" strokeType="OUTSIDE" strokeWidth="0.0" text="Add new book" textAlignment="CENTER" wrappingWidth="194.267578125">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="50.0" />
+                     </GridPane.margin>
+                  </Text>
+                  <Button fx:id="backBtn" mnemonicParsing="false" onAction="#clickedBack" text="Back" GridPane.halignment="CENTER" GridPane.rowIndex="14" />
+               </children>
+               <padding>
+                  <Insets bottom="50.0" left="70.0" right="70.0" top="50.0" />
+               </padding>
+            </GridPane>
+         </graphic></Label>
+   </children>
+</AnchorPane>
