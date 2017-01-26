@@ -1,20 +1,35 @@
+
 package dataaccess;
 
-import java.io.Serializable;
+import java.io.*;
 
 public class PersonData implements Serializable {
-	private static final long serialVersionUID = 8309080721495266420L;
-	String firstName;
-	String lastName;
-	int phoneNumber;
-	//Address address;
+	private String firstName;
+	private String lastName;
+	private int phoneNumber;
+	private Address address;
 
-	public PersonData(String firstName, String lastName, int phoneNumber) {
+
+	public PersonData(String firstName, String lastName, int phoneNumber, Address address) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.phoneNumber = phoneNumber;
-		//this.address = address;
+		this.address = address;
+
+	}
+
+
+
+
+	public Address getAddress() {
+
+		return address;
+	}
+
+	public void setAddress(Address a) {
+		this.address = a;
+
 	}
 
 	public String getFirstName() {
@@ -41,12 +56,42 @@ public class PersonData implements Serializable {
 		this.phoneNumber = phoneNumber;
 	}
 
+
+
+
+
+
 	@Override
 	public boolean equals(Object obj) {
-		return (this.firstName.equals(((PersonData) obj).firstName)
-				&& this.lastName.equals(((PersonData) obj).lastName) && this.phoneNumber
-					==((PersonData) obj).phoneNumber);
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		PersonData other = (PersonData) obj;
+		if (address == null) {
+			if (other.address != null)
+				return false;
+		} else if (!address.equals(other.address))
+			return false;
+		if (firstName == null) {
+			if (other.firstName != null)
+				return false;
+		} else if (!firstName.equals(other.firstName))
+			return false;
+		if (lastName == null) {
+			if (other.lastName != null)
+				return false;
+		} else if (!lastName.equals(other.lastName))
+			return false;
+		if (phoneNumber != other.phoneNumber)
+			return false;
+		return true;
 	}
+
+
+
 
 	@Override
 	public String toString() {
